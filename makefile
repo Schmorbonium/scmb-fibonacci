@@ -80,7 +80,7 @@ $(CLEAN_DIRS)::
 world:: clean all
 
 LDLIBS=
-CFLAGS+=-O
+CFLAGS+=-Og
 
 LDFLAGS+=-Wl,--no-relax
 LDFLAGS+=-Wl,-Tdata=0x1000
