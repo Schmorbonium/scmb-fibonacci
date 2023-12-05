@@ -1,0 +1,48 @@
+
+prog:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00002197          	auipc	x3,0x2
+   4:	80018193          	addi	x3,x3,-2048 # 1800 <__global_pointer$>
+   8:	00001517          	auipc	x10,0x1
+   c:	00050513          	addi	x10,x10,0 # 1008 <toggle>
+  10:	00001597          	auipc	x11,0x1
+  14:	ffc58593          	addi	x11,x11,-4 # 100c <__BSS_END__>
+
+00000018 <clear_bss>:
+  18:	00b57863          	bgeu	x10,x11,28 <finish_bss>
+  1c:	00050023          	sb	x0,0(x10)
+  20:	00150513          	addi	x10,x10,1
+  24:	fe000ae3          	beq	x0,x0,18 <clear_bss>
+
+00000028 <finish_bss>:
+  28:	00000097          	auipc	x1,0x0
+  2c:	00c080e7          	jalr	x1,12(x1) # 34 <main>
+  30:	00100073          	ebreak
+
+00000034 <main>:
+  34:	0240006f          	jal	x0,58 <main+0x24>
+  38:	00001737          	lui	x14,0x1
+  3c:	00472783          	lw	x15,4(x14) # 1004 <a>
+  40:	000016b7          	lui	x13,0x1
+  44:	0006a683          	lw	x13,0(x13) # 1000 <b>
+  48:	00d787b3          	add	x15,x15,x13
+  4c:	00f72223          	sw	x15,4(x14)
+  50:	000017b7          	lui	x15,0x1
+  54:	00078423          	sb	x0,8(x15) # 1008 <toggle>
+  58:	000017b7          	lui	x15,0x1
+  5c:	0087c783          	lbu	x15,8(x15) # 1008 <toggle>
+  60:	fc079ce3          	bne	x15,x0,38 <main+0x4>
+  64:	00001737          	lui	x14,0x1
+  68:	00072783          	lw	x15,0(x14) # 1000 <b>
+  6c:	000016b7          	lui	x13,0x1
+  70:	0046a683          	lw	x13,4(x13) # 1004 <a>
+  74:	00d787b3          	add	x15,x15,x13
+  78:	00f72023          	sw	x15,0(x14)
+  7c:	000017b7          	lui	x15,0x1
+  80:	00100713          	addi	x14,x0,1
+  84:	00e78423          	sb	x14,8(x15) # 1008 <toggle>
+  88:	fd1ff06f          	jal	x0,58 <main+0x24>
