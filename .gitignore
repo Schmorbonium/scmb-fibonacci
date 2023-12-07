@@ -1,4 +1,3 @@
 *.o
 *.lst
-*.bin
 prog
