@@ -9,23 +9,23 @@ Make sure we have a way to put values directly into registers
 ## `test_0_load_store`
 - [ ] LB
 - [ ] LH
-- [ ] LW
-- [ ] LBU
+- [x] LW
+- [x] LBU
 - [ ] LHU
-- [ ] SB
+- [x] SB
 - [ ] SH
-- [ ] SW
+- [x] SW
 
-- [ ] LUI
-- [ ] AUIPC
-- [ ] JAL
-- [ ] JALR
-- [ ] BEQ
-- [ ] BNE
+- [x] LUI
+- [x] AUIPC
+- [x] JAL
+- [x] JALR
+- [x] BEQ
+- [x] BNE
 - [ ] BLT
 - [ ] BGE
 - [ ] BLTU
-- [ ] BGEU
+- [x] BGEU
 - [ ] SUB
 - [ ] SLT
 - [ ] SLTI
