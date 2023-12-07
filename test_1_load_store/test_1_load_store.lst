@@ -8,7 +8,7 @@ Disassembly of section .text:
    0:	00001097          	auipc	x1,0x1
    4:	00008093          	addi	x1,x1,0 # 1000 <__DATA_BEGIN__>
    8:	85014137          	lui	x2,0x85014
-   c:	02a00113          	addi	x2,x0,42
+   c:	02a10113          	addi	x2,x2,42 # 8501402a <__global_pointer$+0x8501282a>
   10:	00208023          	sb	x2,0(x1)
   14:	00209123          	sh	x2,2(x1)
   18:	0020a223          	sw	x2,4(x1)
