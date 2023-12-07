@@ -8,7 +8,7 @@
 
     # Store values to memory using different store instructions
     lui x2, 544788
-    addi x2, x0, 42         # Load immediate value 42 to t1
+    addi x2, x2, 42         # Load immediate value 42 to t1
     sb x2, 0(x1)            # Store byte (8 bits) to array[0]
     sh x2, 2(x1)            # Store halfword (16 bits) to array[2]
     sw x2, 4(x1)            # Store word (32 bits) to array[4]
