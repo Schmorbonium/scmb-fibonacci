@@ -1,7 +1,7 @@
 ## `test_0_add`
 
-- [ ] ADD
-- [ ] ADDI
+- [x] ADD
+- [x] ADDI
 
 Make sure we have a way to put values directly into registers
 
