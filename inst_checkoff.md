@@ -26,20 +26,20 @@ Make sure we have a way to put values directly into registers
 - [x] BGE
 - [x] BLTU
 - [x] BGEU
-- [ ] SUB
-- [ ] SLT
-- [ ] SLTI
-- [ ] SLTU
-- [ ] SLTIU
-- [ ] XOR
-- [ ] XORI
-- [ ] OR
-- [ ] ORI
-- [ ] AND
-- [ ] ANDI
-- [ ] SLL
-- [ ] SLLI
-- [ ] SRL
-- [ ] SRLI
-- [ ] SRA
-- [ ] SRAI
+- [x] SUB
+- [x] SLT
+- [x] SLTI
+- [x] SLTU
+- [x] SLTIU
+- [x] XOR
+- [x] XORI
+- [x] OR
+- [x] ORI
+- [x] AND
+- [x] ANDI
+- [x] SLL
+- [x] SLLI
+- [x] SRL
+- [x] SRLI
+- [x] SRA
+- [x] SRAI
