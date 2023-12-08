@@ -32,26 +32,26 @@ Disassembly of section .text:
   48:	4007a783          	lw	x15,1024(x15) # 1400 <widthPtr>
   4c:	00a00713          	addi	x14,x0,10
   50:	00e78023          	sb	x14,0(x15)
-  54:	00100593          	addi	x11,x0,1
-  58:	80008537          	lui	x10,0x80008
-  5c:	00700713          	addi	x14,x0,7
-  60:	0c800313          	addi	x6,x0,200
-  64:	0140006f          	jal	x0,78 <main+0x44>
-  68:	00158593          	addi	x11,x11,1
-  6c:	00b327b3          	slt	x15,x6,x11
-  70:	fff78793          	addi	x15,x15,-1
-  74:	00f5f5b3          	and	x11,x11,x15
-  78:	00000693          	addi	x13,x0,0
-  7c:	feb056e3          	bge	x0,x11,68 <main+0x34>
-  80:	00a68633          	add	x12,x13,x10
-  84:	00068793          	addi	x15,x13,0
-  88:	00d75663          	bge	x14,x13,94 <main+0x60>
-  8c:	ff978793          	addi	x15,x15,-7
-  90:	fef74ee3          	blt	x14,x15,8c <main+0x58>
-  94:	00f60023          	sb	x15,0(x12)
-  98:	00168693          	addi	x13,x13,1
-  9c:	fed592e3          	bne	x11,x13,80 <main+0x4c>
-  a0:	fc9ff06f          	jal	x0,68 <main+0x34>
+  54:	00100513          	addi	x10,x0,1
+  58:	00a00613          	addi	x12,x0,10
+  5c:	800085b7          	lui	x11,0x80008
+  60:	0c858593          	addi	x11,x11,200 # 800080c8 <__global_pointer$+0x800064c8>
+  64:	0c800313          	addi	x6,x0,200
+  68:	0340006f          	jal	x0,9c <main+0x68>
+  6c:	00a68693          	addi	x13,x13,10
+  70:	00b68e63          	beq	x13,x11,8c <main+0x58>
+  74:	00000793          	addi	x15,x0,0
+  78:	00f68733          	add	x14,x13,x15
+  7c:	00f70023          	sb	x15,0(x14)
+  80:	00178793          	addi	x15,x15,1
+  84:	fec79ae3          	bne	x15,x12,78 <main+0x44>
+  88:	fe5ff06f          	jal	x0,6c <main+0x38>
+  8c:	00150513          	addi	x10,x10,1
+  90:	00a327b3          	slt	x15,x6,x10
+  94:	fff78793          	addi	x15,x15,-1
+  98:	00f57533          	and	x10,x10,x15
+  9c:	800086b7          	lui	x13,0x80008
+  a0:	fd5ff06f          	jal	x0,74 <main+0x40>
 
 000000a4 <mod>:
   a4:	00a5d663          	bge	x11,x10,b0 <mod+0xc>
