@@ -41,7 +41,7 @@ Disassembly of section .text:
   5c:	fa808093          	addi	x1,x1,-88 # 1000 <__DATA_BEGIN__>
   60:	00400793          	addi	x15,x0,4
   64:	00000073          	ecall
-  68:	fd1ff06f          	jal	x0,38 <next_test>
+  68:	0180006f          	jal	x0,80 <blt_signed_test>
 
 0000006c <bne_failure>:
   6c:	00001097          	auipc	x1,0x1
@@ -49,6 +49,8 @@ Disassembly of section .text:
   74:	00400793          	addi	x15,x0,4
   78:	00000073          	ecall
   7c:	0d40006f          	jal	x0,150 <end_program>
+
+00000080 <blt_signed_test>:
   80:	ffb00193          	addi	x3,x0,-5
   84:	0021c463          	blt	x3,x2,8c <blt_signed_success>
   88:	0180006f          	jal	x0,a0 <blt_signed_failure>
@@ -58,7 +60,7 @@ Disassembly of section .text:
   90:	f7408093          	addi	x1,x1,-140 # 1000 <__DATA_BEGIN__>
   94:	00400793          	addi	x15,x0,4
   98:	00000073          	ecall
-  9c:	f9dff06f          	jal	x0,38 <next_test>
+  9c:	0180006f          	jal	x0,b4 <bltu_test>
 
 000000a0 <blt_signed_failure>:
   a0:	00001097          	auipc	x1,0x1
@@ -66,6 +68,8 @@ Disassembly of section .text:
   a8:	00400793          	addi	x15,x0,4
   ac:	00000073          	ecall
   b0:	0a00006f          	jal	x0,150 <end_program>
+
+000000b4 <bltu_test>:
   b4:	fff00213          	addi	x4,x0,-1
   b8:	00226463          	bltu	x4,x2,c0 <bltu_success>
   bc:	0180006f          	jal	x0,d4 <bltu_failure>
@@ -75,7 +79,7 @@ Disassembly of section .text:
   c4:	f4008093          	addi	x1,x1,-192 # 1000 <__DATA_BEGIN__>
   c8:	00400793          	addi	x15,x0,4
   cc:	00000073          	ecall
-  d0:	f69ff06f          	jal	x0,38 <next_test>
+  d0:	0180006f          	jal	x0,e8 <bge_signed_test>
 
 000000d4 <bltu_failure>:
   d4:	00001097          	auipc	x1,0x1
@@ -83,6 +87,8 @@ Disassembly of section .text:
   dc:	00400793          	addi	x15,x0,4
   e0:	00000073          	ecall
   e4:	06c0006f          	jal	x0,150 <end_program>
+
+000000e8 <bge_signed_test>:
   e8:	00f00293          	addi	x5,x0,15
   ec:	0022d463          	bge	x5,x2,f4 <bge_signed_success>
   f0:	0180006f          	jal	x0,108 <bge_signed_failure>
@@ -92,7 +98,7 @@ Disassembly of section .text:
   f8:	f0c08093          	addi	x1,x1,-244 # 1000 <__DATA_BEGIN__>
   fc:	00400793          	addi	x15,x0,4
  100:	00000073          	ecall
- 104:	f35ff06f          	jal	x0,38 <next_test>
+ 104:	0180006f          	jal	x0,11c <bgeu_test>
 
 00000108 <bge_signed_failure>:
  108:	00001097          	auipc	x1,0x1
@@ -100,6 +106,8 @@ Disassembly of section .text:
  110:	00400793          	addi	x15,x0,4
  114:	00000073          	ecall
  118:	0380006f          	jal	x0,150 <end_program>
+
+0000011c <bgeu_test>:
  11c:	01400313          	addi	x6,x0,20
  120:	00237463          	bgeu	x6,x2,128 <bgeu_success>
  124:	0180006f          	jal	x0,13c <bgeu_failure>
@@ -109,7 +117,7 @@ Disassembly of section .text:
  12c:	ed808093          	addi	x1,x1,-296 # 1000 <__DATA_BEGIN__>
  130:	00400793          	addi	x15,x0,4
  134:	00000073          	ecall
- 138:	f01ff06f          	jal	x0,38 <next_test>
+ 138:	0180006f          	jal	x0,150 <end_program>
 
 0000013c <bgeu_failure>:
  13c:	00001097          	auipc	x1,0x1
