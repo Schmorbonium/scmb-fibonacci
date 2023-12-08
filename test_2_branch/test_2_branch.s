@@ -10,7 +10,7 @@ msg_failure:    .word 1
 _start:
     # Initialize registers
     li  x1, 1      # Initialize a counter
-    li  x2, 10     # Set the loop limit
+    li  x2, 1     # Set the loop limit
 
     # BEQ Test
     beq x1, x2, beq_success
