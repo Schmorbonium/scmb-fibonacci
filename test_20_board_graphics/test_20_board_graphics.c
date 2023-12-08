@@ -19,13 +19,12 @@ void main() {
 
     *heightPtr = HEIGHT;
     *widthPtr = WIDTH;
+    uint8_t* ptr = (uint8_t*)GRAPHICS_START;
 
     while (1) {
-        uint8_t* ptr = (uint8_t*)GRAPHICS_START;
         for (i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
-                *ptr = j;
-                ptr++;
+                ptr[i*WIDTH + j] = i;
             }
         }
     }

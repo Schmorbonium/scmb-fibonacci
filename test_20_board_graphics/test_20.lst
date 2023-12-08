@@ -32,18 +32,18 @@ Disassembly of section .text:
   48:	4007a783          	lw	x15,1024(x15) # 1400 <widthPtr>
   4c:	00a00713          	addi	x14,x0,10
   50:	00e78023          	sb	x14,0(x15)
-  54:	00a00613          	addi	x12,x0,10
-  58:	800085b7          	lui	x11,0x80008
-  5c:	0c858593          	addi	x11,x11,200 # 800080c8 <__global_pointer$+0x800064c8>
-  60:	800086b7          	lui	x13,0x80008
-  64:	00c0006f          	jal	x0,70 <main+0x3c>
-  68:	00a68693          	addi	x13,x13,10 # 8000800a <__global_pointer$+0x8000640a>
-  6c:	feb68ae3          	beq	x13,x11,60 <main+0x2c>
-  70:	00000793          	addi	x15,x0,0
-  74:	00f68733          	add	x14,x13,x15
-  78:	00f70023          	sb	x15,0(x14)
+  54:	800085b7          	lui	x11,0x80008
+  58:	01400613          	addi	x12,x0,20
+  5c:	00a58693          	addi	x13,x11,10 # 8000800a <__global_pointer$+0x8000640a>
+  60:	00000713          	addi	x14,x0,0
+  64:	0100006f          	jal	x0,74 <main+0x40>
+  68:	00170713          	addi	x14,x14,1
+  6c:	00a68693          	addi	x13,x13,10
+  70:	fec706e3          	beq	x14,x12,5c <main+0x28>
+  74:	ff668793          	addi	x15,x13,-10
+  78:	00e78023          	sb	x14,0(x15)
   7c:	00178793          	addi	x15,x15,1
-  80:	fec79ae3          	bne	x15,x12,74 <main+0x40>
+  80:	fed79ce3          	bne	x15,x13,78 <main+0x44>
   84:	fe5ff06f          	jal	x0,68 <main+0x34>
 
 00000088 <mod>:
