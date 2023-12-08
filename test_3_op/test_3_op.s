@@ -3,75 +3,75 @@
 # Data section
 .data
   array:  .space 16
-  msg1:   .asciiz "Test passed!\n"
-  msg2:   .asciiz "Test failed!\n"
+  msg1:   .word 0
+  msg2:   .word 1
 
 # Text section
 .text
   main:
     # Arithmetic instructions
-    li a0, 2
-    li a1, 3
-    add a2, a0, a1      # a2 = a0 + a1
-    sub a3, a2, a1      # a3 = a2 - a1
+    li x1, 2
+    li x2, 3
+    add x3, x1, x2      # x3 = x1 + x2
+    sub x4, x3, x2      # x4 = x3 - x2
 
     # Logical instructions
-    li a7, 1
-    li a8, 0
-    and a9, a7, a8      # a9 = a7 & a8
-    or  a10, a9, a7     # a10 = a9 | a7
-    xor a11, a10, a8    # a11 = a10 ^ a8
+    li x5, 1
+    li x6, 0
+    and x7, x5, x6      # x7 = x5 & x6
+    or  x8, x7, x5     # x8 = x7 | x5
+    xor x9, x8, x6    # x9 = x8 ^ x6
 
     # SLT and SLTU instructions
-    li a12, 5
-    li a13, 3
-    slt a14, a12, a13   # a14 = (a12 < a13)
-    sltu a15, a12, a13  # a15 = (a12 < a13) unsigned
+    li x10, 5
+    li x11, 3
+    slt x12, x10, x11   # x12 = (x10 < x11)
+    sltu x13, x10, x11  # x13 = (x10 < x11) unsigned
 
     # Load and store instructions
-    li a0, 42
-    sw a0, array         # Store a0 in array
-    lw a16, array        # Load from array to a16
+    li x1, 42
+    sw x1, array         # Store x1 in array
+    lw x14, array        # Load from array to x14
 
     # Shift instructions
-    li a17, 8
-    sll a18, a17, 2     # a18 = a17 << 2 (shift left logical)
-    srl a19, a18, 1     # a19 = a18 >> 1 (shift right logical)
-    sra a20, a18, 1     # a20 = a18 >> 1 (shift right arithmetic)
+    li x7, 8
+    sll x8, x7, 2     # x8 = x7 << 2 (shift left logical)
+    srl x9, x8, 1     # x9 = x8 >> 1 (shift right logical)
+    sra x10, x8, 1     # x10 = x8 >> 1 (shift right arithmetic)
 
     # Branch instructions
-    bne a0, a16, fail    # Branch if not equal
+    bne x1, x14, fail    # Branch if not equal
     j success            # Jump to success label
 
 fail:
     j fail_exit
 
 success:
-    li a0, 0
+    li x1, 0
     j success_exit
 
 fail_exit:
     # Print failure message
-    li a0, 1
-    li a1, msg2
-    li a2, 13   # Length of the string
-    li a7, 64   # Write syscall number
+    li x1, 1
+    li x2, msg2
+    li x3, 13   # Length of the string
+    li x5, 64   # Write syscall number
     ecall
 
     # Exit program
-    li a7, 93   # Exit syscall number
-    li a0, 1
+    li x5, 93   # Exit syscall number
+    li x1, 1
     ecall
 
 success_exit:
     # Print success message
-    li a0, 1
-    li a1, msg1
-    li a2, 14   # Length of the string
-    li a7, 64   # Write syscall number
+    li x1, 1
+    li x2, msg1
+    li x3, 14   # Length of the string
+    li x5, 64   # Write syscall number
     ecall
 
     # Exit program
-    li a7, 93   # Exit syscall number
-    li a0, 0
+    li x5, 93   # Exit syscall number
+    li x1, 0
     ecall
