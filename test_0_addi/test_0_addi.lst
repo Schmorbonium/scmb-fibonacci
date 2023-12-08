@@ -1,0 +1,22 @@
+
+test_0_addi/test_0_addi:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <__BSS_END__-0x1000>:
+   0:	00100093          	addi	x1,x0,1
+   4:	00200113          	addi	x2,x0,2
+   8:	00308193          	addi	x3,x1,3
+   c:	00408213          	addi	x4,x1,4
+  10:	00508293          	addi	x5,x1,5
+  14:	00608313          	addi	x6,x1,6
+  18:	00708393          	addi	x7,x1,7
+  1c:	00708433          	add	x8,x1,x7
+  20:	008084b3          	add	x9,x1,x8
+  24:	00908533          	add	x10,x1,x9
+  28:	00a085b3          	add	x11,x1,x10
+  2c:	00b08633          	add	x12,x1,x11
+  30:	00c086b3          	add	x13,x1,x12
+  34:	00d08733          	add	x14,x1,x13
+  38:	00e087b3          	add	x15,x1,x14

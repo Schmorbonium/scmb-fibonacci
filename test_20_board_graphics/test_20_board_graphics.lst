@@ -1,0 +1,43 @@
+
+test_20_board_graphics/test_20_board_graphics:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <mod>:
+   0:	0080006f          	jal	x0,8 <mod+0x8>
+   4:	40b50533          	sub	x10,x10,x11
+   8:	fea5cee3          	blt	x11,x10,4 <mod+0x4>
+   c:	00008067          	jalr	x0,0(x1)
+
+00000010 <main>:
+  10:	ff010113          	addi	x2,x2,-16
+  14:	00112623          	sw	x1,12(x2)
+  18:	00812423          	sw	x8,8(x2)
+  1c:	00912223          	sw	x9,4(x2)
+  20:	800077b7          	lui	x15,0x80007
+  24:	01400713          	addi	x14,x0,20
+  28:	00e78423          	sb	x14,8(x15) # 80007008 <__global_pointer$+0x80005808>
+  2c:	00a00713          	addi	x14,x0,10
+  30:	00e78223          	sb	x14,4(x15)
+  34:	00100793          	addi	x15,x0,1
+  38:	00f12023          	sw	x15,0(x2)
+  3c:	0400006f          	jal	x0,7c <main+0x6c>
+  40:	00700593          	addi	x11,x0,7
+  44:	00040513          	addi	x10,x8,0
+  48:	00000097          	auipc	x1,0x0
+  4c:	fb8080e7          	jalr	x1,-72(x1) # 0 <mod>
+  50:	00a48023          	sb	x10,0(x9)
+  54:	00148493          	addi	x9,x9,1
+  58:	00140413          	addi	x8,x8,1
+  5c:	00012783          	lw	x15,0(x2)
+  60:	fef440e3          	blt	x8,x15,40 <main+0x30>
+  64:	00178793          	addi	x15,x15,1
+  68:	00078713          	addi	x14,x15,0
+  6c:	00f12023          	sw	x15,0(x2)
+  70:	0c800793          	addi	x15,x0,200
+  74:	00e7d463          	bge	x15,x14,7c <main+0x6c>
+  78:	00012023          	sw	x0,0(x2)
+  7c:	800084b7          	lui	x9,0x80008
+  80:	00000413          	addi	x8,x0,0
+  84:	fd9ff06f          	jal	x0,5c <main+0x4c>
