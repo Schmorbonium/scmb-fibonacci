@@ -22,9 +22,9 @@ Make sure we have a way to put values directly into registers
 - [x] JALR
 - [x] BEQ
 - [x] BNE
-- [ ] BLT
-- [ ] BGE
-- [ ] BLTU
+- [x] BLT
+- [x] BGE
+- [x] BLTU
 - [x] BGEU
 - [ ] SUB
 - [ ] SLT
