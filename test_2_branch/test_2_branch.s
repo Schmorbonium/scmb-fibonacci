@@ -42,7 +42,8 @@ next_test:
 
 test_loop:
     # BNE Test
-    bne x1, x2, bne_success
+    addi x3, x0, 15
+    bne x1, x3, bne_success
     j   bne_failure
 
 bne_success:
