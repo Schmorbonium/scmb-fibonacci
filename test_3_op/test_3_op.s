@@ -54,7 +54,7 @@ success:
 fail_exit:
     # Print failure message
     li x1, 1
-    li x2, msg2
+    la x2, msg2
     li x3, 13   # Length of the string
     li x5, 64   # Write syscall number
     ecall
@@ -68,7 +68,7 @@ success_exit:
     # Print success message
     li x1, 1
     la x6, msg1
-    li x2, 0(x6)
+    lw x2, 0(x6)
     li x3, 14   # Length of the string
     li x5, 64   # Write syscall number
     ecall
