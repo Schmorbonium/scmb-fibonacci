@@ -20,8 +20,6 @@ void main() {
     *heightPtr = HEIGHT;
     *widthPtr = WIDTH;
 
-
-
     while (1) {
         uint8_t* ptr = (uint8_t*)GRAPHICS_START;
         for (i = 0; i < HEIGHT; i++) {
@@ -30,9 +28,6 @@ void main() {
                 ptr++;
             }
         }
-        len++;
-        if (len > maxLen)
-            len = 0;
     }
 }
 
