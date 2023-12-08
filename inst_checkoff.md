@@ -7,13 +7,13 @@ Make sure we have a way to put values directly into registers
 
 
 ## `test_0_load_store`
-- [ ] LB
-- [ ] LH
+- [x] LB
+- [x] LH
 - [x] LW
 - [x] LBU
 - [ ] LHU
 - [x] SB
-- [ ] SH
+- [x] SH
 - [x] SW
 
 - [x] LUI
