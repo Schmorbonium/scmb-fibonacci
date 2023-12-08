@@ -33,7 +33,8 @@ beq_failure:
 next_test:
     # Increment counter and check if all tests are done
     addi x1, x1, 1
-    bne x1, 7, test_loop  # Change 7 to the total number of tests
+    addi x6, x0, 7
+    bne x1, x6, test_loop  # Change 7 to the total number of tests
 
     # If all tests are done, exit the program
     li  x15, 10     # Exit system call
