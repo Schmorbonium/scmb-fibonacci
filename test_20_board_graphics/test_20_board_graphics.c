@@ -27,6 +27,12 @@ void main() {
                 ptr[i*WIDTH + j] = i;
             }
         }
+
+        for (i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                ptr[i*WIDTH + j] = 0;
+            }
+        }
     }
 }
 
