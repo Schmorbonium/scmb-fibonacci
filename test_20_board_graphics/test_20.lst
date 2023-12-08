@@ -8,9 +8,9 @@ Disassembly of section .text:
    0:	00002197          	auipc	x3,0x2
    4:	c0018193          	addi	x3,x3,-1024 # 1c00 <__global_pointer$>
    8:	00001517          	auipc	x10,0x1
-   c:	3f850513          	addi	x10,x10,1016 # 1400 <__BSS_END__>
+   c:	40050513          	addi	x10,x10,1024 # 1408 <__BSS_END__>
   10:	00001597          	auipc	x11,0x1
-  14:	3f058593          	addi	x11,x11,1008 # 1400 <__BSS_END__>
+  14:	3f858593          	addi	x11,x11,1016 # 1408 <__BSS_END__>
 
 00000018 <clear_bss>:
   18:	00b57863          	bgeu	x10,x11,28 <finish_bss>
@@ -24,29 +24,37 @@ Disassembly of section .text:
   30:	00100073          	ebreak
 
 00000034 <main>:
-  34:	00100593          	addi	x11,x0,1
-  38:	80008537          	lui	x10,0x80008
-  3c:	00700713          	addi	x14,x0,7
-  40:	0c800313          	addi	x6,x0,200
-  44:	0140006f          	jal	x0,58 <main+0x24>
-  48:	00158593          	addi	x11,x11,1
-  4c:	00b327b3          	slt	x15,x6,x11
-  50:	fff78793          	addi	x15,x15,-1
-  54:	00f5f5b3          	and	x11,x11,x15
-  58:	00000693          	addi	x13,x0,0
-  5c:	feb056e3          	bge	x0,x11,48 <main+0x14>
-  60:	00a68633          	add	x12,x13,x10
-  64:	00068793          	addi	x15,x13,0
-  68:	00d75663          	bge	x14,x13,74 <main+0x40>
-  6c:	ff978793          	addi	x15,x15,-7
-  70:	fef74ee3          	blt	x14,x15,6c <main+0x38>
-  74:	00f60023          	sb	x15,0(x12)
-  78:	00168693          	addi	x13,x13,1
-  7c:	fed592e3          	bne	x11,x13,60 <main+0x2c>
-  80:	fc9ff06f          	jal	x0,48 <main+0x14>
+  34:	000017b7          	lui	x15,0x1
+  38:	4047a783          	lw	x15,1028(x15) # 1404 <heightPtr>
+  3c:	01400713          	addi	x14,x0,20
+  40:	00e78023          	sb	x14,0(x15)
+  44:	000017b7          	lui	x15,0x1
+  48:	4007a783          	lw	x15,1024(x15) # 1400 <widthPtr>
+  4c:	00a00713          	addi	x14,x0,10
+  50:	00e78023          	sb	x14,0(x15)
+  54:	00100593          	addi	x11,x0,1
+  58:	80008537          	lui	x10,0x80008
+  5c:	00700713          	addi	x14,x0,7
+  60:	0c800313          	addi	x6,x0,200
+  64:	0140006f          	jal	x0,78 <main+0x44>
+  68:	00158593          	addi	x11,x11,1
+  6c:	00b327b3          	slt	x15,x6,x11
+  70:	fff78793          	addi	x15,x15,-1
+  74:	00f5f5b3          	and	x11,x11,x15
+  78:	00000693          	addi	x13,x0,0
+  7c:	feb056e3          	bge	x0,x11,68 <main+0x34>
+  80:	00a68633          	add	x12,x13,x10
+  84:	00068793          	addi	x15,x13,0
+  88:	00d75663          	bge	x14,x13,94 <main+0x60>
+  8c:	ff978793          	addi	x15,x15,-7
+  90:	fef74ee3          	blt	x14,x15,8c <main+0x58>
+  94:	00f60023          	sb	x15,0(x12)
+  98:	00168693          	addi	x13,x13,1
+  9c:	fed592e3          	bne	x11,x13,80 <main+0x4c>
+  a0:	fc9ff06f          	jal	x0,68 <main+0x34>
 
-00000084 <mod>:
-  84:	00a5d663          	bge	x11,x10,90 <mod+0xc>
-  88:	40b50533          	sub	x10,x10,x11
-  8c:	fea5cee3          	blt	x11,x10,88 <mod+0x4>
-  90:	00008067          	jalr	x0,0(x1)
+000000a4 <mod>:
+  a4:	00a5d663          	bge	x11,x10,b0 <mod+0xc>
+  a8:	40b50533          	sub	x10,x10,x11
+  ac:	fea5cee3          	blt	x11,x10,a8 <mod+0x4>
+  b0:	00008067          	jalr	x0,0(x1)

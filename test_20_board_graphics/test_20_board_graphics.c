@@ -9,13 +9,16 @@
 #define WIDTH 10
 #define COLOR_COUNT 7
 
+volatile uint8_t* heightPtr = GRAPHICS_BOARD_HEIGHT_ADDR;
+volatile uint8_t* widthPtr = GRAPHICS_BOARD_WIDTH_ADDR;
+
 void main() {
     int i = 0;
     int len = 1;
     int maxLen = HEIGHT * WIDTH;
 
-    *((uint8_t*)GRAPHICS_BOARD_HEIGHT_ADDR) = HEIGHT;
-    *((uint8_t*)GRAPHICS_BOARD_WIDTH_ADDR) = WIDTH;
+    *heightPtr = HEIGHT;
+    *widthPtr = WIDTH;
 
     while (1) {
         uint8_t* ptr = (uint8_t*) GRAPHICS_START;
