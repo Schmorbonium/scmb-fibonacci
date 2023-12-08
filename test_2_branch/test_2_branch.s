@@ -51,7 +51,7 @@ bne_success:
     la  x1, msg_success
     li  x15, 4      # Print string system call
     ecall
-    j   next_test
+    j   blt_signed_test
 
 bne_failure:
     # Print failure message for BNE
@@ -59,7 +59,7 @@ bne_failure:
     li  x15, 4      # Print string system call
     ecall
     j   end_program
-
+blt_signed_test:
     # BLT (signed) Test
     li  x3, -5     # Set a negative number
     blt x3, x2, blt_signed_success
@@ -70,7 +70,7 @@ blt_signed_success:
     la  x1, msg_success
     li  x15, 4      # Print string system call
     ecall
-    j   next_test
+    j   bltu_test
 
 blt_signed_failure:
     # Print failure message for BLT (signed)
@@ -78,7 +78,7 @@ blt_signed_failure:
     li  x15, 4      # Print string system call
     ecall
     j   end_program
-
+bltu_test:
     # BLTU Test
     li  x4, 0xFFFFFFFF # Set a large positive unsigned number
     bltu x4, x2, bltu_success
@@ -89,7 +89,7 @@ bltu_success:
     la  x1, msg_success
     li  x15, 4      # Print string system call
     ecall
-    j   next_test
+    j   bge_signed_test
 
 bltu_failure:
     # Print failure message for BLTU
@@ -97,7 +97,7 @@ bltu_failure:
     li  x15, 4      # Print string system call
     ecall
     j   end_program
-
+bge_signed_test:
     # BGE (signed) Test
     li  x5, 15     # Set a positive number
     bge x5, x2, bge_signed_success
@@ -108,7 +108,7 @@ bge_signed_success:
     la  x1, msg_success
     li  x15, 4      # Print string system call
     ecall
-    j   next_test
+    j   bgeu_test
 
 bge_signed_failure:
     # Print failure message for BGE (signed)
@@ -116,7 +116,7 @@ bge_signed_failure:
     li  x15, 4      # Print string system call
     ecall
     j   end_program
-
+bgeu_test:
     # BGEU Test
     li  x6, 20     # Set a positive unsigned number
     bgeu x6, x2, bgeu_success
@@ -127,7 +127,7 @@ bgeu_success:
     la  x1, msg_success
     li  x15, 4      # Print string system call
     ecall
-    j   next_test
+    j   end_program
 
 bgeu_failure:
     # Print failure message for BGEU
