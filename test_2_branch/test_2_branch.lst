@@ -1,0 +1,122 @@
+
+test_2_branch/test_2_branch:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00100093          	addi	x1,x0,1
+   4:	00a00113          	addi	x2,x0,10
+   8:	00208463          	beq	x1,x2,10 <beq_success>
+   c:	0180006f          	jal	x0,24 <beq_failure>
+
+00000010 <beq_success>:
+  10:	00001097          	auipc	x1,0x1
+  14:	ff008093          	addi	x1,x1,-16 # 1000 <__DATA_BEGIN__>
+  18:	00400793          	addi	x15,x0,4
+  1c:	00000073          	ecall
+  20:	0180006f          	jal	x0,38 <next_test>
+
+00000024 <beq_failure>:
+  24:	00001097          	auipc	x1,0x1
+  28:	fe008093          	addi	x1,x1,-32 # 1004 <msg_failure>
+  2c:	00400793          	addi	x15,x0,4
+  30:	00000073          	ecall
+  34:	1180006f          	jal	x0,14c <end_program>
+
+00000038 <next_test>:
+  38:	00108093          	addi	x1,x1,1
+  3c:	00700313          	addi	x6,x0,7
+  40:	00609663          	bne	x1,x6,4c <test_loop>
+  44:	00a00793          	addi	x15,x0,10
+  48:	00000073          	ecall
+
+0000004c <test_loop>:
+  4c:	00209463          	bne	x1,x2,54 <bne_success>
+  50:	0180006f          	jal	x0,68 <bne_failure>
+
+00000054 <bne_success>:
+  54:	00001097          	auipc	x1,0x1
+  58:	fac08093          	addi	x1,x1,-84 # 1000 <__DATA_BEGIN__>
+  5c:	00400793          	addi	x15,x0,4
+  60:	00000073          	ecall
+  64:	fd5ff06f          	jal	x0,38 <next_test>
+
+00000068 <bne_failure>:
+  68:	00001097          	auipc	x1,0x1
+  6c:	f9c08093          	addi	x1,x1,-100 # 1004 <msg_failure>
+  70:	00400793          	addi	x15,x0,4
+  74:	00000073          	ecall
+  78:	0d40006f          	jal	x0,14c <end_program>
+  7c:	ffb00193          	addi	x3,x0,-5
+  80:	0021c463          	blt	x3,x2,88 <blt_signed_success>
+  84:	0180006f          	jal	x0,9c <blt_signed_failure>
+
+00000088 <blt_signed_success>:
+  88:	00001097          	auipc	x1,0x1
+  8c:	f7808093          	addi	x1,x1,-136 # 1000 <__DATA_BEGIN__>
+  90:	00400793          	addi	x15,x0,4
+  94:	00000073          	ecall
+  98:	fa1ff06f          	jal	x0,38 <next_test>
+
+0000009c <blt_signed_failure>:
+  9c:	00001097          	auipc	x1,0x1
+  a0:	f6808093          	addi	x1,x1,-152 # 1004 <msg_failure>
+  a4:	00400793          	addi	x15,x0,4
+  a8:	00000073          	ecall
+  ac:	0a00006f          	jal	x0,14c <end_program>
+  b0:	fff00213          	addi	x4,x0,-1
+  b4:	00226463          	bltu	x4,x2,bc <bltu_success>
+  b8:	0180006f          	jal	x0,d0 <bltu_failure>
+
+000000bc <bltu_success>:
+  bc:	00001097          	auipc	x1,0x1
+  c0:	f4408093          	addi	x1,x1,-188 # 1000 <__DATA_BEGIN__>
+  c4:	00400793          	addi	x15,x0,4
+  c8:	00000073          	ecall
+  cc:	f6dff06f          	jal	x0,38 <next_test>
+
+000000d0 <bltu_failure>:
+  d0:	00001097          	auipc	x1,0x1
+  d4:	f3408093          	addi	x1,x1,-204 # 1004 <msg_failure>
+  d8:	00400793          	addi	x15,x0,4
+  dc:	00000073          	ecall
+  e0:	06c0006f          	jal	x0,14c <end_program>
+  e4:	00f00293          	addi	x5,x0,15
+  e8:	0022d463          	bge	x5,x2,f0 <bge_signed_success>
+  ec:	0180006f          	jal	x0,104 <bge_signed_failure>
+
+000000f0 <bge_signed_success>:
+  f0:	00001097          	auipc	x1,0x1
+  f4:	f1008093          	addi	x1,x1,-240 # 1000 <__DATA_BEGIN__>
+  f8:	00400793          	addi	x15,x0,4
+  fc:	00000073          	ecall
+ 100:	f39ff06f          	jal	x0,38 <next_test>
+
+00000104 <bge_signed_failure>:
+ 104:	00001097          	auipc	x1,0x1
+ 108:	f0008093          	addi	x1,x1,-256 # 1004 <msg_failure>
+ 10c:	00400793          	addi	x15,x0,4
+ 110:	00000073          	ecall
+ 114:	0380006f          	jal	x0,14c <end_program>
+ 118:	01400313          	addi	x6,x0,20
+ 11c:	00237463          	bgeu	x6,x2,124 <bgeu_success>
+ 120:	0180006f          	jal	x0,138 <bgeu_failure>
+
+00000124 <bgeu_success>:
+ 124:	00001097          	auipc	x1,0x1
+ 128:	edc08093          	addi	x1,x1,-292 # 1000 <__DATA_BEGIN__>
+ 12c:	00400793          	addi	x15,x0,4
+ 130:	00000073          	ecall
+ 134:	f05ff06f          	jal	x0,38 <next_test>
+
+00000138 <bgeu_failure>:
+ 138:	00001097          	auipc	x1,0x1
+ 13c:	ecc08093          	addi	x1,x1,-308 # 1004 <msg_failure>
+ 140:	00400793          	addi	x15,x0,4
+ 144:	00000073          	ecall
+ 148:	0040006f          	jal	x0,14c <end_program>
+
+0000014c <end_program>:
+ 14c:	00a00793          	addi	x15,x0,10
+ 150:	00000073          	ecall
