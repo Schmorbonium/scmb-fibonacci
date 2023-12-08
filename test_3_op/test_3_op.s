@@ -30,8 +30,9 @@
 
     # Load and store instructions
     li x1, 42
-    sw x1, array         # Store x1 in array
-    lw x14, array        # Load from array to x14
+    la x5, array
+    sw x1, 0(x5)         # Store x1 in array
+    lw x14, 0(x5)        # Load from array to x14
 
     # Shift instructions
     li x7, 8
@@ -66,7 +67,8 @@ fail_exit:
 success_exit:
     # Print success message
     li x1, 1
-    li x2, msg1
+    la x6, msg1
+    li x2, 0(x6)
     li x3, 14   # Length of the string
     li x5, 64   # Write syscall number
     ecall
