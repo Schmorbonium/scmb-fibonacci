@@ -1,0 +1,61 @@
+
+test_3_op/test_3_op:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:	00200093          	addi	x1,x0,2
+   4:	00300113          	addi	x2,x0,3
+   8:	002081b3          	add	x3,x1,x2
+   c:	40218233          	sub	x4,x3,x2
+  10:	00100293          	addi	x5,x0,1
+  14:	00000313          	addi	x6,x0,0
+  18:	0062f3b3          	and	x7,x5,x6
+  1c:	0053e433          	or	x8,x7,x5
+  20:	006444b3          	xor	x9,x8,x6
+  24:	00500513          	addi	x10,x0,5
+  28:	00300593          	addi	x11,x0,3
+  2c:	00b52633          	slt	x12,x10,x11
+  30:	00b536b3          	sltu	x13,x10,x11
+  34:	02a00093          	addi	x1,x0,42
+  38:	00001297          	auipc	x5,0x1
+  3c:	fc828293          	addi	x5,x5,-56 # 1000 <__DATA_BEGIN__>
+  40:	0012a023          	sw	x1,0(x5)
+  44:	0002a703          	lw	x14,0(x5)
+  48:	00800393          	addi	x7,x0,8
+  4c:	00239413          	slli	x8,x7,0x2
+  50:	00145493          	srli	x9,x8,0x1
+  54:	40145513          	srai	x10,x8,0x1
+  58:	00e09463          	bne	x1,x14,60 <fail>
+  5c:	0080006f          	jal	x0,64 <success>
+
+00000060 <fail>:
+  60:	00c0006f          	jal	x0,6c <fail_exit>
+
+00000064 <success>:
+  64:	00000093          	addi	x1,x0,0
+  68:	0280006f          	jal	x0,90 <success_exit>
+
+0000006c <fail_exit>:
+  6c:	00100093          	addi	x1,x0,1
+  70:	00001117          	auipc	x2,0x1
+  74:	fa410113          	addi	x2,x2,-92 # 1014 <msg2>
+  78:	00d00193          	addi	x3,x0,13
+  7c:	04000293          	addi	x5,x0,64
+  80:	00000073          	ecall
+  84:	05d00293          	addi	x5,x0,93
+  88:	00100093          	addi	x1,x0,1
+  8c:	00000073          	ecall
+
+00000090 <success_exit>:
+  90:	00100093          	addi	x1,x0,1
+  94:	00001317          	auipc	x6,0x1
+  98:	f7c30313          	addi	x6,x6,-132 # 1010 <msg1>
+  9c:	00032103          	lw	x2,0(x6)
+  a0:	00e00193          	addi	x3,x0,14
+  a4:	04000293          	addi	x5,x0,64
+  a8:	00000073          	ecall
+  ac:	05d00293          	addi	x5,x0,93
+  b0:	00000093          	addi	x1,x0,0
+  b4:	00000073          	ecall
