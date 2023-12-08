@@ -45,7 +45,7 @@ OBJDUMPFLAGS+=-Mnumeric,no-aliases
 %.lst : %
 	$(OBJDUMP) $(OBJDUMPFLAGS) -dr $< > $<.lst
 
-% : %.o
+% : %.o crt0.o
 	$(LINK.c) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 	$(SIZE) -x -A $@
 
