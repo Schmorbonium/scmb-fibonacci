@@ -32,29 +32,29 @@ Disassembly of section .text:
   48:	4007a783          	lw	x15,1024(x15) # 1400 <widthPtr>
   4c:	00a00713          	addi	x14,x0,10
   50:	00e78023          	sb	x14,0(x15)
-  54:	80008537          	lui	x10,0x80008
-  58:	01400593          	addi	x11,x0,20
-  5c:	0d250613          	addi	x12,x10,210 # 800080d2 <__global_pointer$+0x800064d2>
-  60:	00a50693          	addi	x13,x10,10
-  64:	00000713          	addi	x14,x0,0
-  68:	0100006f          	jal	x0,78 <main+0x44>
-  6c:	00170713          	addi	x14,x14,1
+  54:	00000513          	addi	x10,x0,0
+  58:	80008337          	lui	x6,0x80008
+  5c:	0d230593          	addi	x11,x6,210 # 800080d2 <__global_pointer$+0x800064d2>
+  60:	00600293          	addi	x5,x0,6
+  64:	0400006f          	jal	x0,a4 <main+0x70>
+  68:	ff660613          	addi	x12,x12,-10
+  6c:	0ff67613          	andi	x12,x12,255
   70:	00a68693          	addi	x13,x13,10
-  74:	02b70a63          	beq	x14,x11,a8 <main+0x74>
+  74:	00b68e63          	beq	x13,x11,90 <main+0x5c>
   78:	ff668793          	addi	x15,x13,-10
-  7c:	00e78023          	sb	x14,0(x15)
-  80:	00178793          	addi	x15,x15,1
-  84:	fed79ce3          	bne	x15,x13,7c <main+0x48>
-  88:	fe5ff06f          	jal	x0,6c <main+0x38>
-  8c:	00a70713          	addi	x14,x14,10
-  90:	fcc708e3          	beq	x14,x12,60 <main+0x2c>
-  94:	ff670793          	addi	x15,x14,-10
-  98:	00078023          	sb	x0,0(x15)
-  9c:	00178793          	addi	x15,x15,1
-  a0:	fee79ce3          	bne	x15,x14,98 <main+0x64>
-  a4:	fe9ff06f          	jal	x0,8c <main+0x58>
-  a8:	00a50713          	addi	x14,x10,10
-  ac:	fe9ff06f          	jal	x0,94 <main+0x60>
+  7c:	00f60733          	add	x14,x12,x15
+  80:	00e78023          	sb	x14,0(x15)
+  84:	00178793          	addi	x15,x15,1
+  88:	fed79ae3          	bne	x15,x13,7c <main+0x48>
+  8c:	fddff06f          	jal	x0,68 <main+0x34>
+  90:	00150513          	addi	x10,x10,1
+  94:	0ff57513          	andi	x10,x10,255
+  98:	00a2b7b3          	sltu	x15,x5,x10
+  9c:	fff78793          	addi	x15,x15,-1
+  a0:	00f57533          	and	x10,x10,x15
+  a4:	00050613          	addi	x12,x10,0
+  a8:	00a30693          	addi	x13,x6,10
+  ac:	fcdff06f          	jal	x0,78 <main+0x44>
 
 000000b0 <mod>:
   b0:	00a5d663          	bge	x11,x10,bc <mod+0xc>

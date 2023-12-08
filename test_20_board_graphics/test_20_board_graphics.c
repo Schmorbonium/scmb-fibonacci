@@ -20,18 +20,17 @@ void main() {
     *heightPtr = HEIGHT;
     *widthPtr = WIDTH;
     uint8_t* ptr = (uint8_t*)GRAPHICS_START;
+    uint8_t colorOffset = 0;
 
     while (1) {
         for (i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
-                ptr[i*WIDTH + j] = i;
+                ptr[i*WIDTH + j] = j + colorOffset;
             }
         }
-
-        for (i = 0; i < HEIGHT; i++) {
-            for (int j = 0; j < WIDTH; j++) {
-                ptr[i*WIDTH + j] = 0;
-            }
+        colorOffset++;
+        if (colorOffset > 6) {
+            colorOffset = 0;
         }
     }
 }
